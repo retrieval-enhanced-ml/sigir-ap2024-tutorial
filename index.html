@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SIGIR-AP 2024 Tutorial: Retrieval-Enhanced Machine Learning: Synthesis and Opportunities">
+  <meta name="keywords" content="REML, Information Retrieval, Machine Learning, RAG, SIGIR, SIGIR-AP, SIGIR-AP 2024">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SIGIR-AP 2024 Tutorial: Retrieval-Enhanced Machine Learning: Synthesis and Opportunities</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+              <span style="font-size: 80%">SIGIR-AP 2024 Tutorial:</span><br />
+              Retrieval-Enhanced Machine Learning:<br>Synthesis and Opportunities
+            </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <table>
+            <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="20%" style="text-align: center; padding: 10px"><img width="150px" height="150px" src="static/imgs/profile_toeunkim.png"></td>
+                <td width="20%" style="text-align: center; padding: 10px"><img width="150px" height="150px" src="static/imgs/profile_toeunkim.png"></td>
+                <td width="20%" style="text-align: center; padding: 10px"><img width="150px" height="150px" src="static/imgs/profile_toeunkim.png"></td>
+                <td width="20%" style="text-align: center; padding: 10px"><img width="150px" height="150px" src="static/imgs/profile_toeunkim.png"></td>
+                <td width="20%" style="text-align: center; padding: 10px"><img width="150px" height="150px" src="static/imgs/profile_toeunkim.png"></td>
+            </tr>
+              <tr>
+                <!-- <th scope="row">TR-7</th> -->
+                <td width="20%" style="text-align: center"><a href="https://841.io" style="border-radius: 50%">Fernando Diaz</a><sup>1</sup>,</td>
+                <td width="20%" style="text-align: center"><a href="https://mrdrozdov.github.io" style="border-radius: 50%">Andrew Drozdov</a><sup>2</sup>,</td>
+                <td width="20%" style="text-align: center"><a href="https://kimdanny.github.io" style="border-radius: 50%">To Eun Kim</a><sup>1</sup>,</td>
+                <td width="20%" style="text-align: center"><a href="https://alirezasalemi7.github.io" style="border-radius: 50%">Alireza Salemi</a><sup>3</sup></td>
+                <td width="20%" style="text-align: center"><a href="https://groups.cs.umass.edu/zamani/" style="border-radius: 50%">Hamed Zamani</a><sup>3</sup></td>
+              </tr>
+            </table>
+            </span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Carnegie Mellon University, </span>
+            <span class="author-block"><sup>2</sup>Databricks, </span>
+            <span class="author-block"><sup>3</sup>University of Massachusetts Amherst</span>
+          </div>
+          <br />
+          <div class="is-size-5 publication-authors">
+            <b>Monday December 9th 14:15 - 17:30 (GMT+9) @ Room 2</b>
+          </div>
+          <!-- <div class="is-size-5 publication-authors">
+            Zoom link available on <a href="https://underline.io/events/395/sessions?eventSessionId=15330&searchGroup=lecture" target="_blank">Underline</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">About this tutorial</h2>
+        <div class="content has-text-justified">
+          <p>
+            Retrieval-enhanced machine learning (REML) refers to the use of information retrieval methods to support reasoning and inference in machine learning tasks.  
+            Although relatively recent, these approaches can substantially improve model performance. 
+            This includes improved generalization, knowledge grounding, scalability, freshness, attribution, interpretability and on-device learning. 
+            To date, despite being influenced by work in the information retrieval community, 
+            REML research has predominantly been presented in natural language processing (NLP) conferences.
+          </p>
+          <p>
+            Our tutorial addresses this disconnect by introducing core REML concepts and synthesizing the literature from various domains in machine learning (ML), including but beyond NLP. 
+            What is unique to our approach is that we used consistent notations, to provide researchers with a unified and expandable framework. 
+            This tutorial will be delivered in lecture format based on an existing manuscript: "<a href="https://arxiv.org/abs/2407.12982"><b>Retrieval-Enhanced Machine Learning: Synthesis and Opportunities</b></a>"
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Schedule</h2>
+        <p>
+          Our tutorial is scheduled for December 9th from 14:15 to 17:30 (GMT+9). <br>
+          <!-- <em>Please note that there could be revisions to the presentation slides.</em>  -->
+          <em>Combined Slides: </em>
+          <a href="./slides/PLACEHOLDER.pdf" target='_blank'>[Slides]</a>
+        </p>
+
+        <div class="content has-text-justified">
+
+          <style type="text/css">
+          .tg  {border-collapse:collapse;border-spacing:0;}
+          .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+            font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+          .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+          .tg .tg-0lax{text-align:left;vertical-align:top}
+          </style>
+          <table class="tg">
+          <thead>
+            <tr>
+              <th class="tg-0pky">Time</th>
+              <th class="tg-0lax">Section</th>
+              <th class="tg-0lax">Presenter</th>
+              <th class="tg-0lax">In <a href="https://arxiv.org/abs/2407.12982">Manuscript</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tg-0lax">14:15 — 14:35</td>
+              <td class="tg-0lax">Section 1: Introduction</td>
+              <td class="tg-0lax">Fernando Diaz</td>
+              <td class="tg-0lax">Chapter 1 - 2</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">14:35 — 14:55</td>
+              <td class="tg-0lax">Section 2: Querying</td>
+              <td class="tg-0lax">Alireza Salemi</td>
+              <td class="tg-0lax">Chapter 3</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">14:55 — 15:05</td>
+              <td class="tg-0lax">Section 3: Searching</td>
+              <td class="tg-0lax">Alireza Salemi</td>
+              <td class="tg-0lax">Chapter 4</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">15:05 — 15:35</td>
+              <td class="tg-0lax">Section 4: Presentation & Consumption</td>
+              <td class="tg-0lax">Andrew Drozdov</td>
+              <td class="tg-0lax">Chapter 5</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">15:35 — 16:45</td>
+              <td class="tg-0lax">Q & A</td>
+              <td class="tg-0lax">All</td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">15:45 — 16:00</td>
+              <td class="tg-0lax">Coffee Break</td>
+              <td class="tg-0lax"></td>
+              <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">16:00 — 16:30</td>
+              <td class="tg-0lax">Section 5: Storing</td>
+              <td class="tg-0lax">To Eun Kim</td>
+              <td class="tg-0lax">Chapter 6</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">16:30 — 16:50</td>
+              <td class="tg-0lax">Section 6: Optimization</td>
+              <td class="tg-0lax">Hamed Zamani</td>
+              <td class="tg-0lax">Chapter 7</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">16:50 — 17:05</td>
+              <td class="tg-0lax">Section 7: Evaluation</td>
+              <td class="tg-0lax">Fernando Diaz</td>
+              <td class="tg-0lax">Chapter 8</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">17:05 — 17:20</td>
+              <td class="tg-0lax">Section 8: Future Direction & Conclusion</td>
+              <td class="tg-0lax">Fernando Diaz</td>
+              <td class="tg-0lax">Chapter 9 - 10</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">17:20 — 17:30</td>
+              <td class="tg-0lax">Q & A</td>
+              <td class="tg-0lax">All</td>
+              <td class="tg-0lax"></td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Reading List</h2>
+
+        <p>The tutorial extensively covers papers highlighted in <b>bold</b>.</p>
+
+        <br>
+        <h3 class="title is-5">Section 1: Introduction</h3>
+        <p><b>Sub-title name placeholder</b></pp>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+        </ul>
+
+        <br><br>
+        <h3 class="title is-5">Section 2: Querying</h3>
+        <p><b>Sub-title name placeholder</b></pp>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+          <li><a href="https://arxiv.org/abs/2005.11401">Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (Lewis et al. 2022)</li>
+        </ul>
+       
+      </div>
+    </div>
+
+
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX (Manuscript)</h2>
+    <pre>
+      <code>
+        @misc{kim2024retrievalenhancedmachinelearning,
+          title={Retrieval-Enhanced Machine Learning: Synthesis and Opportunities}, 
+          author={To Eun Kim and Alireza Salemi and Andrew Drozdov and Fernando Diaz and Hamed Zamani},
+          year={2024},
+          eprint={2407.12982},
+          archivePrefix={arXiv},
+          primaryClass={cs.LG},
+          url={https://arxiv.org/abs/2407.12982}, 
+        }
+      </code>
+    </pre>
+  </div>
+</section>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX (Tutorial Proposal)</h2>
+    <pre>
+      <code>
+        @inproceedings{placeholder}
+      </code>
+    </pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/retrieval-enhanced-ml/sigir-ap2024-reml.github.io" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
