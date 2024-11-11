@@ -1,0 +1,11 @@
+.profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10%; /* Optional: makes images circular */
+}
+.profile-cell {
+    width: 20%;
+    text-align: center;
+    padding: 10px;
+}
